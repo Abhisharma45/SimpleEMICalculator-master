@@ -1,117 +1,417 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.emicalculator.MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
+
+    android:id="@+id/activity_main"
+
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:orientation="vertical"
 
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/principal_amount_lbl"
-        android:textColor="@color/colorPrimary"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+    android:layout_width="match_parent"
 
-    <EditText
-        android:id="@+id/loan_amount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/border"
-        android:hint="Total Loan Amount"
-        android:inputType="number"
-        android:padding="8dp"
-        android:singleLine="true"
-        android:windowSoftInputMode="stateHidden"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/interest_per_annum_lbl"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+    tools:context="com.example.android.emicalculator.MainActivity">
 
-    <EditText
-        android:id="@+id/loan_interest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/border"
-        android:hint="Loan Interest"
-        android:inputType="numberDecimal"
-        android:padding="8dp"
-        android:singleLine="true"/>
+    andrid:paddingBottom="@dimen/activity_vertical_margin"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loan_tenure_in_months_lbl"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+    android:paddingLeft="@dimen/activity_horizontal_margin"
 
-    <EditText
-        android:id="@+id/loan_tenure"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/border"
-        android:hint="Loan Tenure in month"
-        android:inputType="number"
-        android:padding="8dp"
-        android:singleLine="true"/>
+    android:paddingRight="@dimen/activity_horizontal_margin"
+
+    android:paddingTop="@dimen/activity_vertical_margin">
+
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/lbl_emi"
-            android:layout_width="wrap_content"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="EMI (Monthly Payment)"
-            android:textColor="#000000"
-            android:layout_gravity="center_horizontal"
-            android:textSize="16sp"/>
-        <TextView
-            android:id="@+id/emi"
-            android:layout_width="wrap_content"
+
+            android:orientation="horizontal"
+
+            android:weightSum="1">
+
+
+            <TextView
+
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".5"
+
+                android:gravity="center"
+
+                android:text="Loan Amount:"
+                android:textColor="#009688" />
+
+            <EditText
+
+                android:id="@+id/loanAmt"
+
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".5"
+
+                android:gravity="center"
+
+                android:hint="total loan amount"
+
+                android:inputType="numberDecimal"
+                android:textColor="#3F51B5" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:paddingLeft="8dp"
-            android:layout_gravity="center_horizontal"
-            android:text=""
-            android:textColor="@color/colorAccent"
-            android:textSize="50sp"
-            />
+
+            android:orientation="horizontal"
+
+            android:weightSum="1">
+
+
+            <TextView
+
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".5"
+
+                android:gravity="center"
+
+                android:text="Annual Interest:"
+                android:textColor="#009688" />
+
+            <EditText
+
+                android:id="@+id/annualInterest"
+
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".5"
+
+                android:gravity="center"
+
+                android:hint="annual interest rate"
+
+                android:inputType="numberDecimal"
+                android:textColor="#3F51B5" />
+
+
+
+        </LinearLayout>
+
+        <Button
+
+            android:id="@+id/calculate"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+
+            android:text="calculate"
+            android:textColor="#673AB7" />
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:padding="10dp"
+
+                    android:text="Loan Length (Years)"
+                    android:textColor="#FF5722" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:padding="10dp"
+
+                    android:text="Monthly Payment"
+                    android:textColor="#FF5722" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="5"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years5"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="10"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years10"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="15"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years15"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="20"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years20"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="25"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years25"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:gravity="center"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text="30"
+                    android:textColor="#673AB7" />
+
+                <TextView
+
+                    android:id="@+id/years30"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:padding="10dp"
+
+                    android:text=""
+                    android:textColor="#3F51B5" />
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
 
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="calculate"
-        android:layout_gravity="center_horizontal"
-        android:text="Calculate"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="#ffffff"/>
 
 
 
-
-</LinearLayout>
 
 
 </ScrollView>

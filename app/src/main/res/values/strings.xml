@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">EMI Calculator</string>
-    <string name="principal_amount_lbl">Principal Amount *</string>
-    <string name="interest_per_annum_lbl">Interest (per annum)*</string>
-    <string name="loan_tenure_in_months_lbl">Loan Tenure (in months) *</string>
+
+    <string name="app_name">Loan Calculator</string>
+
 </resources>
